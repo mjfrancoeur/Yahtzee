@@ -12,7 +12,7 @@ import acm.program.*;
 import acm.util.*;
 
 public class Yahtzee extends GraphicsProgram implements YahtzeeConstants {
-
+	
 	public static void main(String[] args) {
 		new Yahtzee().start(args);
 	}
@@ -416,24 +416,21 @@ public class Yahtzee extends GraphicsProgram implements YahtzeeConstants {
 
 	}
 
-	// private boolean checkCategory() {
-	/* returns true if player has selected a valid category */
-	// }
-
 	/* Private instance variables */
-	private int nPlayers;
-	private String[] playerNames;
-	private YahtzeeDisplay display;
-	private RandomGenerator rgen = new RandomGenerator();
-	private int[] dice;
-	private ArrayList<Integer> index;
+	private int nPlayers; // number of players in the game
+	private String[] playerNames; // Array of strings holding player names
+	private YahtzeeDisplay display; // Instance of YahtzeeDisplay class
+	private RandomGenerator rgen = new RandomGenerator(); // instance of a random number geneartor
+	private int[] dice; // Array of integers to represent rolls of the dice
+	private ArrayList<Integer> index; // ArrayList of Integers to represent which die were selected
 	private String currentPlayerName; // keeps track of whose turn it is
 	private int currentPlayer; // keeps track of player index + 1
 	private int currentPlayerIndex; // current player index
 	private int score; // keeps track of current turn score
 	private int[][] scoresArray;
-	private int[][] filledCategoriesArray;
+	private int[][] filledCategoriesArray; 
 	private int winningPlayerIndex; // index of winning player
 	private String winningPlayer; // name of the winning player
 	private int winningScore; // score of winning player
+	
 }
