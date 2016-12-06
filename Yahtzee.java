@@ -65,9 +65,8 @@ public class Yahtzee extends GraphicsProgram implements YahtzeeConstants {
 					// each turn consists of three rolls
 					if (turn == 0) {
 						displayMessage(turn);
-						display.waitForPlayerToClickRoll(nPlayers);
+						display.waitForPlayerToClickRoll(player + 1);
 						rollDie(); // method to generate random ints for all die
-									// //
 						display.displayDice(dice);
 					}
 					if (turn > 0) {
@@ -91,7 +90,7 @@ public class Yahtzee extends GraphicsProgram implements YahtzeeConstants {
 	}
 
 	private void selectCategory() {
-		displayMessage(3); // Revisit to make this cleaner
+		displayMessage(3);
 		int category;
 
 		/*
@@ -108,7 +107,6 @@ public class Yahtzee extends GraphicsProgram implements YahtzeeConstants {
 			}
 		}
 		/* checks if the roll is valid for specified category */
-
 		if (isCategoryValid(category)) {
 			score = setScore(category); // calculates the score
 		} else {
@@ -232,6 +230,7 @@ public class Yahtzee extends GraphicsProgram implements YahtzeeConstants {
 		}
 	}
 
+	// Sorts array from smallest to largest integer
 	private void sortArray(int[] array) {
 
 		for (int x1 = 0; x1 < array.length; x1++) {
@@ -251,6 +250,7 @@ public class Yahtzee extends GraphicsProgram implements YahtzeeConstants {
 		}
 	}
 
+	// Returns true if category has not been scored for current player
 	private boolean isCategoryOpen(int category) {
 		if (filledCategoriesArray[currentPlayerIndex][category - 1] == 0) {
 			return true;
@@ -258,7 +258,8 @@ public class Yahtzee extends GraphicsProgram implements YahtzeeConstants {
 			return false;
 		}
 	}
-
+	
+	// Sums the upper scores
 	private void tallyUpperScores() {
 		int upperScore;
 		for (int i = 0; i < nPlayers; i++) {
@@ -269,7 +270,8 @@ public class Yahtzee extends GraphicsProgram implements YahtzeeConstants {
 			scoresArray[i][UPPER_SCORE - 1] = upperScore;
 		}
 	}
-
+	
+	// Sums the lower scores
 	private void tallyLowerScores() {
 		int lowerScore;
 		for (int i = 0; i < nPlayers; i++) {
@@ -281,6 +283,7 @@ public class Yahtzee extends GraphicsProgram implements YahtzeeConstants {
 		}
 	}
 
+	// Awards upper bonus if criteria is met
 	private void awardUpperBonus() {
 		for (int i = 0; i < nPlayers; i++) {
 			if (scoresArray[i][UPPER_SCORE - 1] >= 63) {
@@ -289,6 +292,7 @@ public class Yahtzee extends GraphicsProgram implements YahtzeeConstants {
 		}
 	}
 
+	// Sums lower, upper, and bonus scores
 	private void tallyTotalScores() {
 		int totalPlayerScore;
 		for (int i = 0; i < nPlayers; i++) {
@@ -299,6 +303,7 @@ public class Yahtzee extends GraphicsProgram implements YahtzeeConstants {
 		}
 	}
 
+	// Declares a winner, the player with the highest total score
 	private void determineWinner() {
 		winningScore = 0;
 		for (int i = 0; i < nPlayers; i++) {
@@ -326,6 +331,7 @@ public class Yahtzee extends GraphicsProgram implements YahtzeeConstants {
 		}
 	}
 
+	// Clears index of selected die and adds the dice that have been selected for upcoming roll
 	private void checkForSelectedDice() {
 		index.clear();
 		for (int i = 0; i < N_DICE; i++) {
@@ -335,6 +341,7 @@ public class Yahtzee extends GraphicsProgram implements YahtzeeConstants {
 		}
 	}
 
+	// Fills in the score for the selected category with the correct number of points
 	private int setScore(int category) {
 		int result = 0;
 
@@ -387,6 +394,7 @@ public class Yahtzee extends GraphicsProgram implements YahtzeeConstants {
 		return result;
 	}
 
+	// Displays the correct prompt on the bottom of the game canvas
 	private void displayMessage(int x) {
 
 		switch (x) {
