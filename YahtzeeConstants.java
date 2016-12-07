@@ -7,25 +7,25 @@
 
 public interface YahtzeeConstants {
 
-/** The width of the application window */
+	/** The width of the application window */
 	public static final int APPLICATION_WIDTH = 600;
 
-/** The height of the application window */
+	/** The height of the application window */
 	public static final int APPLICATION_HEIGHT = 350;
 
-/** The number of dice in the game */
+	/** The number of dice in the game */
 	public static final int N_DICE = 5;
 
-/** The maximum number of players */
+	/** The maximum number of players */
 	public static final int MAX_PLAYERS = 4;
 
-/** The total number of categories */
+	/** The total number of categories */
 	public static final int N_CATEGORIES = 17;
 
-/** The number of categories in which the player can score */
+	/** The number of categories in which the player can score */
 	public static final int N_SCORING_CATEGORIES = 13;
 
-/** The constants that specify categories on the scoresheet */
+	/** The constants that specify categories on the scoresheet */
 	public static final int ONES = 1;
 	public static final int TWOS = 2;
 	public static final int THREES = 3;
@@ -43,5 +43,5 @@ public interface YahtzeeConstants {
 	public static final int CHANCE = 15;
 	public static final int LOWER_SCORE = 16;
 	public static final int TOTAL = 17;
-  
+
 }

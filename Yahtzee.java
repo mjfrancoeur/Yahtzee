@@ -12,7 +12,7 @@ import acm.program.*;
 import acm.util.*;
 
 public class Yahtzee extends GraphicsProgram implements YahtzeeConstants {
-	
+
 	public static void main(String[] args) {
 		new Yahtzee().start(args);
 	}
@@ -258,7 +258,7 @@ public class Yahtzee extends GraphicsProgram implements YahtzeeConstants {
 			return false;
 		}
 	}
-	
+
 	// Sums the upper scores
 	private void tallyUpperScores() {
 		int upperScore;
@@ -270,7 +270,7 @@ public class Yahtzee extends GraphicsProgram implements YahtzeeConstants {
 			scoresArray[i][UPPER_SCORE - 1] = upperScore;
 		}
 	}
-	
+
 	// Sums the lower scores
 	private void tallyLowerScores() {
 		int lowerScore;
@@ -331,7 +331,8 @@ public class Yahtzee extends GraphicsProgram implements YahtzeeConstants {
 		}
 	}
 
-	// Clears index of selected die and adds the dice that have been selected for upcoming roll
+	// Clears index of selected die and adds the dice that have been selected
+	// for upcoming roll
 	private void checkForSelectedDice() {
 		index.clear();
 		for (int i = 0; i < N_DICE; i++) {
@@ -341,7 +342,8 @@ public class Yahtzee extends GraphicsProgram implements YahtzeeConstants {
 		}
 	}
 
-	// Fills in the score for the selected category with the correct number of points
+	// Fills in the score for the selected category with the correct number of
+	// points
 	private int setScore(int category) {
 		int result = 0;
 
@@ -420,17 +422,20 @@ public class Yahtzee extends GraphicsProgram implements YahtzeeConstants {
 	private int nPlayers; // number of players in the game
 	private String[] playerNames; // Array of strings holding player names
 	private YahtzeeDisplay display; // Instance of YahtzeeDisplay class
-	private RandomGenerator rgen = new RandomGenerator(); // instance of a random number geneartor
+	private RandomGenerator rgen = new RandomGenerator(); // instance of a
+															// random number
+															// geneartor
 	private int[] dice; // Array of integers to represent rolls of the dice
-	private ArrayList<Integer> index; // ArrayList of Integers to represent which die were selected
+	private ArrayList<Integer> index; // ArrayList of Integers to represent
+										// which die were selected
 	private String currentPlayerName; // keeps track of whose turn it is
 	private int currentPlayer; // keeps track of player index + 1
 	private int currentPlayerIndex; // current player index
 	private int score; // keeps track of current turn score
 	private int[][] scoresArray;
-	private int[][] filledCategoriesArray; 
+	private int[][] filledCategoriesArray;
 	private int winningPlayerIndex; // index of winning player
 	private String winningPlayer; // name of the winning player
 	private int winningScore; // score of winning player
-	
+
 }
