@@ -1,5 +1,4 @@
-# cs106a-assignment5
-YAHTZEE! game
+# YAHTZEE!
 
 An implementation of Yahtzee in Java. Solution to Stanford CS106a assignment 5.
 
